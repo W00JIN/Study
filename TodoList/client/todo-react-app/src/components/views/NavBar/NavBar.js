@@ -1,9 +1,7 @@
 import React from 'react'
-import { Layout, Typography } from 'antd';
-import { HeartTwoTone } from '@ant-design/icons';
+import { Layout } from 'antd';
+import { SmileTwoTone } from '@ant-design/icons';
 const { Header } = Layout;
-const { Text } = Typography;
-
 
 function NavBar(props) {
     return (
@@ -13,7 +11,7 @@ function NavBar(props) {
             <div theme="dark" mode="horizontal" font-size = "100pt" style={{color:'white', fontSize:"15pt"}}>
                 
                 <span >To Do List </span>
-                <HeartTwoTone/>
+                <SmileTwoTone/>
                 
             </div>
         </Header>
