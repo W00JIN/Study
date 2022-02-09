@@ -8,7 +8,7 @@ class NavBar extends React.Component{
         return(
             <Header>
                 <div className="logo" />
-                <div theme="dark" mode="horizontal" font-size = "100pt" style={{color:'white', fontSize:"15pt"}}>
+                <div theme="dark" mode="horizontal" fontSize = "100pt" style={{color:'white', fontSize:"15pt"}}>
                     
                     <span >To Do List </span>
                     <SmileTwoTone/>

@@ -12,10 +12,21 @@ class Main extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            item : {id:0, title : "첫 번째 투두리스트", done : true},
+            items : [
+                {id:0, title : "첫 번째 투두리스트", done : true},
+                {id:1, title : "두 번째 투두리스트", done : true}
+            ]
         }
     }
     render() {
+        var todoItems = this.state.items.length>0 && (
+            <list>
+                {this.state.items.map((item,idx)=>(
+                    <Todo key={item.id} item={item}/>
+                ))}
+            </list>
+        )
+
         return(
             <Layout className="layout" style={{ height: "100vh" }}>
                 <NavBar/>
@@ -23,7 +34,9 @@ class Main extends React.Component{
                     <div className="site-layout-content" style={{ backgroundColor:"white", height: "85vh" , padding: "30px", fontSize:"15pt"}}>
                         <div style={{margin:"auto", width :"500px"}}>
                             <AddTodo/>
-                            <Todo item = {this.state.item}/>
+                            <div>
+                                {todoItems}
+                            </div>
                         </div>
                     </div>
                 </Content>

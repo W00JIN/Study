@@ -3,6 +3,16 @@ import {Input} from 'antd'
 const {Search} = Input
 
 class AddTodo extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = { item: { title : "" } }
+    }
+    onInputChange = (e) => {
+        const thisItem = this.state.item
+        thisItem.title = e.target.value
+        this.setState({item : thisItem})
+        console.log(thisItem)
+    }
     render() {
         return(
             <div>
@@ -11,6 +21,8 @@ class AddTodo extends React.Component{
                     allowClear
                     enterButton="Add"
                     style={{ width: "500px", marginLeft:"10px" }}
+                    onChange={this.onInputChange}
+                    value = {this.state.item.title}
                 />
             </div>
         )
