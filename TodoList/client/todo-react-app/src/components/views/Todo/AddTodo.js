@@ -6,12 +6,16 @@ class AddTodo extends React.Component{
     constructor(props){
         super(props)
         this.state = { item: { title : "" } }
+        this.addTodo = props.addTodo
     }
     onInputChange = (e) => {
         const thisItem = this.state.item
         thisItem.title = e.target.value
         this.setState({item : thisItem})
-        console.log(thisItem)
+    }
+    onButtonClick = () => {
+        this.addTodo(this.state.item)
+        this.setState({ item: { title : "" } })
     }
     render() {
         return(
@@ -23,6 +27,7 @@ class AddTodo extends React.Component{
                     style={{ width: "500px", marginLeft:"10px" }}
                     onChange={this.onInputChange}
                     value = {this.state.item.title}
+                    onSearch={this.onButtonClick}
                 />
             </div>
         )

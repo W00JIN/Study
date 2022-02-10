@@ -13,7 +13,7 @@ class Todo extends React.Component{
     render() {
         return(
             <div>
-                <Checkbox style={{padding:"10px 0 0 10px"}}> <text>{this.state.item.title}</text> </Checkbox>
+                <Checkbox style={{padding:"10px 0 0 10px"}}> <span>{this.state.item.title}</span> </Checkbox>
             </div>
         )
     }
