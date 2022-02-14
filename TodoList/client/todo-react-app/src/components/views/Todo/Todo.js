@@ -10,7 +10,12 @@ class Todo extends React.Component{
         this.state = {
             item : props.item
         }
+        this.deleteTodo = props.deleteTodo
     }
+    onDeleteClicked = (e) => {
+        this.deleteTodo({item : this.state.item})
+    }
+
     render() {
         return(
             <div style={{padding:"15px 0px 0 10px"}}>
@@ -20,7 +25,7 @@ class Todo extends React.Component{
 
                 <span style={{float : "right"}}>
                         <EditOutlined style={{color:"#08c"}}/>
-                        <DeleteOutlined style={{paddingLeft:"13px", color:"#eb2f96"}}/>
+                        <DeleteOutlined style={{paddingLeft:"13px", color:"#eb2f96"}} onClick={this.onDeleteClicked}/>
                     </span> 
             </div>
         )

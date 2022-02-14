@@ -23,11 +23,22 @@ class Main extends React.Component{
         this.setState({ items : thisItems })
         console.log("items : ", this.state.items)
     }
+    deleteTodo = (item) => {
+        const thisItems = this.state.items
+
+        console.log("deleting items : ", this.state.items)
+        const newItems = thisItems.filter(e=> e.id !== item.id);
+        this.setState({ items : newItems }, () =>{
+            console.log ("deleted items :", this.state.items)
+        })
+
+    }
+
     render() {
         var todoItems = this.state.items.length>0 && (
             <List>
                 {this.state.items.map((item,idx)=>(
-                    <Todo key={item.id} item={item}/>
+                    <Todo key={item.id} item={item} deleteTodo={this.deleteTodo}/>
                 ))}
             </List>
         )
