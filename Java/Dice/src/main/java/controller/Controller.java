@@ -1,16 +1,19 @@
 package controller;
 
-import domain.Dice;
 import domain.Dices;
+import domain.RandomNumbers;
 import domain.Throwing;
 import view.InputView;
 import view.OutputView;
 
 public class Controller {
 
-    public void run(){
+    private static final int MAX_DICE_NUMBER = 6;
+
+    public void run() {
         InputView inputView = new InputView();
-        Dices dices = new Dices(inputView.input());
+        RandomNumbers randomNumbers = new RandomNumbers(MAX_DICE_NUMBER, inputView.input());
+        Dices dices = new Dices(randomNumbers);
         Throwing throwing = new Throwing(dices);
         OutputView outputView = new OutputView();
         outputView.output(throwing);

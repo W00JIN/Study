@@ -9,7 +9,7 @@ public class Throwing {
     public Throwing(Dices dices) {
         ArrayList<Dice> diceArrayList = dices.getDices();
         for (int i = 0; i < diceArrayList.size(); i++) {
-            String tmp = "주사위" + i + " : " + diceArrayList.get(i).getDiceNumber() + "\n";
+            String tmp = "주사위" + (i + 1) + " : " + diceArrayList.get(i).getDiceNumber() + "\n";
             message = message + tmp;
         }
     }
