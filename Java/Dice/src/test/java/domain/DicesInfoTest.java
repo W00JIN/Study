@@ -7,10 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class ThrowingTest {
+class DicesInfoTest {
 
     private Dices dices;
-
+    private DicesInfo dicesInfo;
     @BeforeEach
     @DisplayName("테스트 전 Dices 클래스 인스턴스 생성")
     void testCreateDices() {
@@ -20,13 +20,14 @@ class ThrowingTest {
         testArray.add(2);
         testArray.add(3);
         randomNumbers.setRandomNumber(testArray);
-        dices = new Dices(randomNumbers);
+        dices = Dices.createDices(randomNumbers);
+        dicesInfo = new DicesInfo(dices);
     }
 
     @Test
     @DisplayName("굴린 주사위 출력 텍스트 확인 테스트")
     void testGetMessage() {
-        Throwing throwing = new Throwing(dices);
-        assertThat(throwing.getMessage()).isEqualTo("주사위1 : 1\n주사위2 : 2\n주사위3 : 3\n");
+        assertThat(dicesInfo.getMessage())
+            .isEqualTo("주사위1 : 1\n주사위2 : 2\n주사위3 : 3\n");
     }
 }

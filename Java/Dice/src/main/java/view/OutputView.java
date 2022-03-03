@@ -1,10 +1,10 @@
 package view;
 
-import domain.Throwing;
+import domain.DicesInfo;
 
 public class OutputView {
 
-    public void output(Throwing throwing) {
-            System.out.println(throwing.getMessage());
+    public void output(DicesInfo dicesInfo) {
+            System.out.println(dicesInfo.getMessage());
     }
 }

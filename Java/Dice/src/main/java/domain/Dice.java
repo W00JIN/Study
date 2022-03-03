@@ -4,7 +4,7 @@ public class Dice {
 
     private final int number;
 
-    public Dice(int number) {
+    public Dice(final int number) {
         this.number = number;
     }
 

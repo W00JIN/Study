@@ -22,13 +22,14 @@ class DicesTest {
         testArray.add(2);
         testArray.add(3);
         randomNumbers.setRandomNumber(testArray);
-        diceList = new Dices(randomNumbers).getDices();
+        diceList = Dices.createDices(randomNumbers).getDices();
     }
 
     @ParameterizedTest
     @DisplayName("Dices 클래스 내 getDices()메소드 테스트")
     @ValueSource(ints = {0, 1, 2})
     void testGetDices(int number) {
-        assertThat(diceList.get(number).getDiceNumber()).isEqualTo(number + 1);
+        assertThat(diceList.get(number).getDiceNumber())
+            .isEqualTo(number + 1);
     }
 }

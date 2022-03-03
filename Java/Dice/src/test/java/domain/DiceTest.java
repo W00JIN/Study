@@ -19,6 +19,7 @@ class DiceTest {
     @Test
     @DisplayName("Dice 클래스 내 getDiceNumber()메소드 테스트")
     void testGetDiceNumber() {
-        assertThat(dice.getDiceNumber()).isEqualTo(1);
+        assertThat(dice.getDiceNumber())
+            .isEqualTo(1);
     }
 }

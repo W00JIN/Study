@@ -1,17 +1,22 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.stream.IntStream;
 
-public class Dices {
+public final class Dices {
 
-    private ArrayList<Dice> dices = new ArrayList<>();
+    private static final ArrayList<Dice> dices = new ArrayList<>();
 
     public Dices(RandomNumbers randomNumber) {
-        randomNumber.getRandomList().forEach(i -> dices.add(new Dice(i)));
+        randomNumber.getRandomList()
+            .forEach(i -> dices.add(new Dice(i)));
+    }
+
+    public static Dices createDices(RandomNumbers randomNumber) {
+        return new Dices(randomNumber);
     }
 
     public ArrayList<Dice> getDices() {
-        return dices;
+        ArrayList<Dice> copyOfDices = dices;
+        return copyOfDices;
     }
 }
