@@ -16,12 +16,11 @@ class DicesTest {
     @BeforeEach
     @DisplayName("테스트 전 Dices 클래스 인스턴스 생성")
     void testCreateDices() {
-        RandomNumbers randomNumbers = new RandomNumbers(6, 3);
         ArrayList<Integer> testArray = new ArrayList<>();
         testArray.add(1);
         testArray.add(2);
         testArray.add(3);
-        randomNumbers.setRandomNumber(testArray);
+        RandomNumbers randomNumbers = new RandomNumbers(testArray);
         diceList = Dices.createDices(randomNumbers).getDices();
     }
 

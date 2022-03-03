@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 public class RandomNumbers {
 
-    private RandomNumber randomNumber = new RandomNumber();
+    private final RandomNumber randomNumber = new RandomNumber();
     private ArrayList<Integer> randomList = new ArrayList<>();
 
     public RandomNumbers(int bound, int count) {
@@ -13,7 +13,7 @@ public class RandomNumbers {
             .forEach(i -> randomList.add(randomNumber.generate(bound) + 1));
     }
 
-    void setRandomNumber(ArrayList<Integer> changeList) {
+    public RandomNumbers(ArrayList<Integer> changeList) {
         randomList = changeList;
     }
 
